@@ -1,0 +1,212 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <title>Kamlesh Yadav</title>
+  </head>
+  <body>
+    <div class="mainContainer">
+        <div id="navbar" class="bg-light sticky-top">
+            <div class="container" >
+                <header class="headerArea">
+                    <a href="" class="logo navbar-brand">Potfolio</a>
+                    <nav>
+                        <ul class="nav__link ">
+                            <li><a href="#about">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#project">Projects</a></li>
+                            <li><a href="#certificates">Course</a></li>
+                            <li><a href="">Contact</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        
+
+        <div class="about container " id="about">
+            
+            <div class="text col-lg-6 col-md-8 col-sm-12 mx-auto my-auto"><h1 class="about_myself">ABOUT MYSELF</h1>
+                <p id="about_me_text">Hi! I'm Kamlesh Yadav, Biaora, Madhya Pradesh. I'm pursuing Master of Computer 
+                    Application (MCA) from Vellore Institute of Technology since 2019. 
+                    Being a Computer Science student I'm always ready to explore new Technology
+                    . I am very much interested in learning Data Science, Web Development.
+                    I have enrolled a course named "Data Science Accelerator" from <a href="https://www.dataisgood.com/">
+                    Data Is Good</a>. I can in developing myself and enhancing my abilities. I am a very kind 
+                    compassionate guy with good sense of humor.
+                </p>
+            </div>
+            <div class="img col-lg-6 col-md-4 col-sm-0">
+                <img src="{% static 'img/banner-image1.png'%}" width=100%/>
+            </div>
+            
+        </div>
+
+        <div class="container project mt-5" id="project">
+            <h1 class="text-center mb-3">Projects</h1>
+            <div class="row ">
+                {% for project in projects %}
+                <div class="col-md-4 col-sm-12 mb-4 ">
+                    <div class="card shadow" style="width: 22rem;">
+                        <div class="inner">
+                            <img class="card-img-top" src="{{project.img.url}}">
+                        </div>
+                        <!-- <img class="card-img-top" src="{{project.img.url}}"> -->
+                        <div class="card-body text-center bg-light">
+                            <h5 class="card-title">{{project.title}}</h5>
+                            <p class="card-text">
+                                {{project.desc}}
+                            </p>
+                            {% if project.liveLink%}
+                            <a  href="{{project.liveLink}}">Live here</a>
+                            {% endif %}
+                            <a class="btn btn-lg btn-block" id="scource_code" style="background-color: #264067; color: #fff;" href="{{project.githubLink}}">Source Code </a>
+                        </div>
+                    </div>
+                </div> 
+                {% endfor %}
+                <!-- <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12 ">
+                        <div class="inner pro">
+                            <img class="" src="{% static 'img/1.jpg'%}">
+                        </div>
+                        <div class="text text-center ">
+                            <h5>Titanic Passenger Survival Prediction</h5>
+                            <p>
+                                The goal of the model is to predict whether a passenger survived the Titanic disaster, given their age, class and a few other features.
+                            </p>
+                            <a class="btn btn-lg btn-block" id="scource_code" style="background-color: #264067; color: #fff;" href="">Source Code </a>
+                        </div>
+                    </div>
+                </div>           -->
+               
+            </div>
+            
+        </div>
+
+        <div class="container lang mt-5 mb-5" id="lang">
+            <h1 class="text-center mb-3">Language and Tools</h1>
+                <table class="table">
+                    <tbody>
+                      <tr class="text-center">
+                        <td>
+                            <span><b><center>Django</center></b></span> 
+                            <img height=60px src="{% static 'img/python.png'%}"> 
+                        </td>
+                        <td>
+                            <span><b><center>Django</center></b></span> 
+                            <img height=60px src="https://cdn.iconscout.com/icon/free/png-256/django-13-1175187.png"> 
+                        </td>
+                        <td>
+                            <span><b><center>Flask</center></b></span> 
+                            <img height=60px src="{% static 'img/flask.png'%}"> 
+                        </td>
+                        <td>
+                            <span><b><center>Java</center></b></span> 
+                            <img height=60px src="{% static 'img/java.png'%}">
+                        </td>
+                    </tr>
+                    <tr class="text-center">
+                        
+                        <td>
+                            <span><b><center>Javascript</center></b></span> 
+                            <img height=60px src="{% static 'img/java-script.png'%}">
+                        </td>
+                        <td>
+                            <span><b><center>HTML</center></b></span> 
+                            <img height=60px src="{% static 'img/html-5.png'%}">
+                        </td>
+                        <td>
+                            <span><b><center>CSS</center></b></span> 
+                            <img height=60px src="{% static 'img/css-3.png'%}">
+                        </td>
+                        <td>
+                            <span><b><center>MySQL</center></b></span> 
+                            <img height=60px src="{% static 'img/mysql.png'%}">
+                        </td>
+                    </tr>
+                    <tr class="text-center">
+                        <td>
+                            <span><b><center>Github</center></b></span> 
+                            <img height=65px src="{% static 'img/github-sign.png'%}">
+                        </td>
+                        <td>
+                            <span><b><center>Panda</center></b></span> 
+                            <img height=65px src="{% static 'img/pandas.png'%}">
+                        </td>
+                        <td>
+                            <span><b><center>Scikit-learn</center></b></span> 
+                            <img height=65px src="{% static 'img/sklearn.png'%}">
+                        </td>
+                        <td>
+                            <span><b><center>Visual Studio Code</center></b></span> 
+                            <img height=65px src="{% static 'img/vscode.png'%}">
+                        </td>
+                      </tr>
+                      <tr class="text-center">
+                        <td>
+                            <span><b><center>Tableau</center></b></span> 
+                            <img height=65px src="{% static 'img/tableau.png'%}">
+                        </td>
+                        <td>
+                            <span><b><center>Power BI</center></b></span> 
+                            <img height=65px src="{% static 'img/powerbi.png'%}">
+                        </td>
+                        <!-- <td>
+                            <span><b><center>Scikit-learn</center></b></span> 
+                            <img height=65px src="{% static 'img/sklearn.png'%}">
+                        </td>
+                        <td>
+                            <span><b><center>Visual Studio Code</center></b></span> 
+                            <img height=65px src="{% static 'img/vscode.png'%}">
+                        </td> -->
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+        </div>
+        <div class="container">
+            <div class="certificates mt-5 mb-5" id="certificates">
+                <h1 class="text-center">Course & Hackathaon</h1>
+                <div class="row mt-4">
+                    <div class="row ">
+                        {% for certificate in certificates %}
+                        <div class="col-lg-4 col-md-6 col-sm-12 mb-4 ">
+                            <div class="card shadow" style="width: 22rem;">
+                                <div class="iner">
+                                    <img class="card-img-top" src="{{certificate.img.url}}">
+                                </div>
+                                <div class="card-body text-center bg-light">
+                                    <h5 class="card-title">{{certificate.title}}</h5>
+                                   
+                                </div>
+                            </div>
+                        </div> 
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact text-center">
+            <a href="https://api.whatsapp.com/send?phone=9584410983&text=KamleshYadav"></a><img src="{% static 'img/whatsapp.png'%}" ></a>
+            <a href="mailto:kamleshyadav875@gmail.com"></a><img src="{% static 'img/gmail.svg'%}"></a>
+            <a href="https://www.linkedin.com/in/kamlesh-yadav-824512194/"></a><img src="{% static 'img/linkedin.svg'%}"></a>
+            <a href="https://github.com/KamleshYadav875"><img src="{% static 'img/github.png'%}">  </a>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
